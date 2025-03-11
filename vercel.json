@@ -1,0 +1,10 @@
+{
+  "build": {
+    "env": {
+      "PRISMA_GENERATE": "true"
+    },
+    "cache": {
+      "node_modules/.prisma": true
+    }
+  }
+}
