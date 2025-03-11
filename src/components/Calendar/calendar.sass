@@ -1,0 +1,32 @@
+.calendarContain
+  width: 70%
+  background: white
+  padding: 20px
+  border-radius: 8px
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+  z-index: 1001 // Asegura que esté por encima del overlay
+  .fc
+    width: 100%
+    height: 20rem
+  .availableSlotsContain
+    ul
+      display: grid
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) // Columnas responsivas
+      gap: 10px // Espacio entre elementos
+      padding: 0
+      list-style: none
+      li
+        display: flex
+        justify-content: center
+        align-items: center
+        button
+          width: 100%
+          padding: 10px
+          background-color: green
+          color: white
+          border: none
+          border-radius: 4px
+          cursor: pointer
+          text-align: center
+          &:hover
+            background-color: darkgreen

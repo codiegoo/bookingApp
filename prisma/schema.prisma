@@ -1,0 +1,30 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // Usa la URL de Neon
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model DisabledDay {
+  id          Int      @id @default(autoincrement())
+  date        DateTime @unique
+  description String?
+}
+
+model Appointment {
+  id          Int      @id @default(autoincrement())
+  user_id     Int
+  date        DateTime
+  time        DateTime
+  status      String   @default("pending")
+}
+
+model AvailableSlot {
+  id         Int      @id @default(autoincrement())
+  date       DateTime
+  start_time DateTime
+  end_time   DateTime
+  max_slots  Int
+}

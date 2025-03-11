@@ -1,0 +1,50 @@
+[
+  {
+    "image": "/images/cards/1.webp",
+    "icon":"",
+    "name":"Chequeo general",
+    "description":"Un examen completo para evaluar la salud bucal, identificar problemas y prevenir enfermedades dentales. Incluye revisión de dientes, encías y tejidos bucales."
+  },
+  {
+    "image": "/images/cards/2.webp",
+    "icon":"",
+    "name":"Limpieza dental",
+    "description":"Eliminación profesional de placa, sarro y manchas para mantener los dientes limpios y sanos. Ideal para prevenir caries y enfermedades de las encías."
+  },
+  {
+    "image": "/images/cards/3.webp",
+    "icon":"",
+    "name":"Extraccion",
+    "description":"Procedimiento seguro para remover dientes dañados, infectados o que no pueden ser salvados. Se realiza con anestesia local para mayor comodidad."
+  },
+  {
+    "image": "/images/cards/4.webp",
+    "icon":"",
+    "name":"Blanqueamiento",
+    "description":"Tratamiento estético que aclara el color de los dientes, eliminando manchas y proporcionando una sonrisa más brillante y rejuvenecida."
+  },
+  {
+    "image": "/images/cards/5.webp",
+    "icon":"",
+    "name":"Ortodoncia",
+    "description":"Corrección de la alineación dental y mordida mediante brackets o alineadores transparentes. Mejora la función y apariencia de la sonrisa."
+  },
+  {
+    "image": "/images/cards/6.webp",
+    "icon":"",
+    "name":"Endodoncia",
+    "description":"Tratamiento para salvar dientes con daño en la pulpa o infecciones. Consiste en remover el tejido afectado y sellar el conducto radicular."
+  },
+  {
+    "image": "/images/cards/7.webp",
+    "icon":"",
+    "name":"Implantes dentales",
+    "description":"Solución permanente para reemplazar dientes perdidos. Los implantes son raíces artificiales de titanio que sostienen coronas o prótesis dentales."
+  },
+  {
+    "image": "/images/cards/8.webp",
+    "icon":"",
+    "name":"Carillas",
+    "description":"Láminas delgadas de porcelana o composite que se adhieren a la superficie de los dientes para corregir imperfecciones y mejorar la estética de la sonrisa."
+  }
+]

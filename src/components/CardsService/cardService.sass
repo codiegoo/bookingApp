@@ -1,0 +1,46 @@
+.sliderContain
+  display: flex
+  flex-direction: row
+  align-items: center
+  gap: 1rem
+  width: 85%
+  max-width: 1200px
+  margin: 0 auto
+  padding: 20px
+  overflow: hidden
+  .cardsWrapper
+    overflow: hidden
+    width: 100%
+  .cardsContainer
+    padding: 1rem 0rem
+    display: flex
+    gap: 1rem
+    transition: transform 0.5s ease-in-out
+  .card
+    flex: 0 0 calc(80% / 3) // Muestra 3 tarjetas a la vez
+    box-sizing: border-box
+    text-align: center
+    border-radius: .5rem
+    text-align: left
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2)
+    img
+      width: 100%
+      height: auto
+      height: auto
+      border-radius: 8px
+    h5
+      margin: 10px 0
+      font-size: 1.2rem
+    p
+      font-size: 0.9rem
+      color: #666
+    button
+      margin-top: 10px
+      padding: 5px 10px
+      background-color: #1523bf
+      color: white
+      border: none
+      border-radius: 4px
+      cursor: pointer
+      &:hover
+        background-color: #1523bf
