@@ -7,6 +7,7 @@ export async function GET() {
     const appointments = await prisma.appointment.findMany();
     return Response.json(appointments);
   } catch (error) {
+    console.error('Error in GET /api/appointments:', error);
     return Response.json({ error: error.message }, { status: 500 });
   }
 }
@@ -24,6 +25,7 @@ export async function POST(request) {
     });
     return Response.json(newAppointment);
   } catch (error) {
+    console.error('Error in POST /api/appointments:', error);
     return Response.json({ error: error.message }, { status: 500 });
   }
 }
