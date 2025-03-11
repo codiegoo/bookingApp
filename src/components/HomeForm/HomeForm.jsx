@@ -35,8 +35,35 @@ export default function HomeForm() {
     "Carillas",
   ];
 
+  const handleSubmit = (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+  
+      // Obtener los datos del formulario
+      const nombreCompleto = formData.get('nombre');
+      const numeroWhatsApp = formData.get('phone');
+      const servicio = formData.get('service');
+      const fecha = formData.get('date');
+  
+      enviarMensajeWhatsApp(nombreCompleto, numeroWhatsApp, servicio, fecha);
+    };
+  
+  
+    // Función para enviar mensaje a WhatsApp
+    const enviarMensajeWhatsApp = (nombreCompleto, numeroWhatsApp, servicio, fecha) => {
+      const mensaje = `Hola, mi nombre es ${nombreCompleto} y me gustaría agendar un cita para ${servicio} al teléfono ${numeroWhatsApp} en el horario y dia ${fecha}`; // Mensaje a enviar
+  
+      const numeroDestino = '6871403223'; // Número de WhatsApp al que enviar el mensaje
+  
+      // Crear el enlace para abrir WhatsApp con el mensaje y el número de destino
+      const url = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensaje)}`;
+  
+      // Abrir WhatsApp en una nueva pestaña del navegador
+      window.open(url, '_blank');
+    };
+
   return (
-    <form action="POST" className="homeFormContain">
+    <form onSubmit={handleSubmit} className="homeFormContain">
       <div className="inputContain">
         <label htmlFor="nombre">Nombre:</label>
         <div className="iconInput">
@@ -87,7 +114,7 @@ export default function HomeForm() {
         </div>
       </div>
 
-      <button>Reservar</button>
+      <button type='submit'>Reservar</button>
 
       {isCalendarOpen && (
           <div className="calendar-overlay">

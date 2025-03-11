@@ -5,6 +5,7 @@ import data from "@/db/data.json";
 import "./cardService.sass";
 import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
+import ServiceForm from "../ServiceForm/ServiceForm";
 
 
 export default function CardsService() {
@@ -14,11 +15,18 @@ export default function CardsService() {
   const [touchEndX, setTouchEndX] = useState(0); // Posición final del toque
   const cardsContainerRef = useRef(null); // Referencia al contenedor de tarjetas
 
+  const [showForm, setShowForm] = useState(false);
+
   // Función para mover el slider a la izquierda
   const slideLeft = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex > 0 ? prevIndex - 1 : data.length - cardsPerPage
     );
+  };
+
+  const handleClickForm = (event) => {
+    event.preventDefault();
+    setShowForm(true);
   };
 
   // Función para mover el slider a la derecha
@@ -71,9 +79,12 @@ export default function CardsService() {
     };
   }, []);
 
+
+  
+
   return (
     <section className="sliderContain">
-      <IoIosArrowDropleft onClick={slideLeft}/>
+      {/* <IoIosArrowDropleft className="slideBtn" onClick={slideLeft}/> */}
       <div
         className="cardsWrapper"
         onTouchStart={handleTouchStart}
@@ -96,14 +107,20 @@ export default function CardsService() {
                 height={150}
               />
               <span className="cardIcon">{service.icon}</span>
-              <h5>{service.name}</h5>
-              <p>{service.description}</p>
-              <button>Ver más</button>
+              <div className="textCardServiceContain">
+                <h5>{service.name}</h5>
+                <p>{service.description}</p>
+              </div>
+              <button onClick={handleClickForm}>Reservar</button>
+              
+              {showForm && <ServiceForm service={service.name} setShowForm={setShowForm}/>}
             </div>
+            
           ))}
         </div>
       </div>
-      <IoIosArrowDropright onClick={slideRight}/>
+      {/* <IoIosArrowDropright className="slideBtn" onClick={slideRight}/> */}
+      
     </section>
   );
 }

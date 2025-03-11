@@ -1,3 +1,4 @@
+'use client'
 import './contact.sass'
 import { RiInstagramFill } from "react-icons/ri";
 import { RiWhatsappFill } from "react-icons/ri";
@@ -25,10 +26,10 @@ export default function Contact() {
         <h3>¿Necesitas <span>más información</span> <br /> o <span>una cotización</span> sin costo?</h3>
         <p>¡Estamos aquí para ayudarte! Contáctanos a través de nuestras redes sociales o déjanos un mensaje. En FoviDental, tu sonrisa es nuestra prioridad, y estamos listos para responder todas tus preguntas y brindarte la atención que mereces. ¡Esperamos saber de ti pronto! </p>
         <div className="socialMediaContain">
-          <button><RiInstagramFill className='contactIcon'/>Instagram</button>
-          <button><RiFacebookCircleFill className='contactIcon'/>Facebook</button>
-          <button><RiWhatsappFill className='contactIcon'/>Whatsapp</button>
-        </div>
+          <button onClick={() => window.location.href = "https://www.instagram.com/fovidental/"}><RiInstagramFill className='contactIcon'/>Instagram</button>
+          <button onClick={() => window.location.href = "https://www.facebook.com/fovidental"}><RiFacebookCircleFill className='contactIcon'/>Facebook</button>
+          <button onClick={() => window.location.href = "https://wa.me/6871403223"}><RiWhatsappFill className='contactIcon'/>Whatsapp</button>
+        </div>  
       </div>
     </section>
   );

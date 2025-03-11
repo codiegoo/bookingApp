@@ -1,0 +1,88 @@
+.formBackground
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 105vh
+  backdrop-filter: blur(8px)
+  background-color: rgba(0, 0, 0, 0.5)
+  z-index: 1000
+  display: flex
+  justify-content: center
+  align-items: center
+  .formContain
+    width: 40%
+    background: #ffde01ff
+    -webkit-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75)
+    -moz-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75)
+    box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75)
+    display: flex
+    flex-direction: column
+    gap: 1rem
+    padding: 3%
+    position: absolute
+    border-radius: 1rem 
+    top: 15%
+    right: 30%
+    .inputContain
+      display: flex
+      flex-direction: column
+      label
+        color: #191919
+        font-size: 1.5rem
+        font-weight: bold
+      input
+        height: 2rem
+        border-radius: .5rem
+        border: none
+    .boletosClienteContain
+      h6
+        font-size: 1.5rem
+        color: #191919
+        font-weight: bold
+      .boletosListGrid
+        display: flex
+        justify-content: center
+        .col
+          width: auto
+          height: 3rem
+          width: 33%
+          .card
+            .card-body
+              padding: 1%
+              display: flex
+              align-items: center
+              justify-content: center
+    .btnApartarForm
+      background: #191919
+      padding: 1rem
+      margin: 0 auto 0 auto
+      border-radius: .5rem
+      border: none
+      text-decoration: none
+      color: #fff
+      font-weight: bold
+      width: 50%
+    .btnApartarForm:hover
+      background: #00A82A
+      color: #191919
+      -webkit-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75)
+      -moz-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75)
+      box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75)
+    .btnCloseForm
+      padding: 0
+      position: absolute
+      border: none
+      background: #191919
+      color: #fff
+      top: 2%
+      right: 2%
+      width: 3rem
+      height: 3rem
+      border-radius: 50%
+    .btnCloseForm:hover
+      background: #00A82A
+      color: #191919
+      -webkit-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75)
+      -moz-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75)
+      box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75)

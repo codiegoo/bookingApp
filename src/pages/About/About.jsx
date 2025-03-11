@@ -68,7 +68,7 @@ export default function About() {
           <p></p>
           <p></p>
         </div>
-        <button>Ver mas</button>
+        <button onClick={() => window.location.href = "https://www.instagram.com/fovidental/"}>Ver mas</button>
       </div>
     </section>
   );

@@ -8,6 +8,10 @@
   margin: 0 auto
   padding: 20px
   overflow: hidden
+  .slideBtn
+    width: 3rem
+    height: 3rem
+    cursor: pointer
   .cardsWrapper
     overflow: hidden
     width: 100%
@@ -22,25 +26,31 @@
     text-align: center
     border-radius: .5rem
     text-align: left
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2)
     img
       width: 100%
       height: auto
       height: auto
       border-radius: 8px
-    h5
-      margin: 10px 0
-      font-size: 1.2rem
-    p
-      font-size: 0.9rem
-      color: #666
+    .textCardServiceContain
+      h5
+        margin: 3% 5%
+        font-size: 1.2rem
+      p
+        font-size: 0.9rem
+        color: #666
+        margin: 0 5%
     button
-      margin-top: 10px
-      padding: 5px 10px
+      width: 60%
+      margin: 5%
+      padding: 3%
       background-color: #1523bf
       color: white
       border: none
-      border-radius: 4px
+      border-radius: 1rem
       cursor: pointer
       &:hover
         background-color: #1523bf

@@ -24,6 +24,7 @@ const MyCalendar = ({ onSelectDate, onClose }) => {
       .then((response) => response.json())
       .then((data) => {
         setEvents(data.map((slot) => ({
+          id: slot.id,
           title: `${formatTime(slot.start_time)} - ${formatTime(slot.end_time)}`,
           start: slot.start_time,
           end: slot.end_time,
@@ -37,11 +38,18 @@ const MyCalendar = ({ onSelectDate, onClose }) => {
   // Función para formatear la hora en un formato legible (ej: 10:00 AM)
   const formatTime = (dateTimeString) => {
     const date = new Date(dateTimeString);
-    return date.toLocaleTimeString('es-ES', {
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true,
-    });
+  
+    // Extrae horas y minutos
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+  
+    // Formatea la hora en formato 12 horas (AM/PM)
+    const ampm = hours >= 12 ? 'pm' : 'am';
+    const formattedHours = hours % 12 || 12; // Convierte 0 a 12 para formato 12 horas
+    const formattedMinutes = minutes.toString().padStart(2, '0'); // Asegura dos dígitos para los minutos
+  
+    // Devuelve el formato deseado (ej: 10:00am)
+    return `${formattedHours}:${formattedMinutes}${ampm}`;
   };
 
   const handleDateClick = (info) => {
@@ -59,7 +67,9 @@ const MyCalendar = ({ onSelectDate, onClose }) => {
 
   const handleSlotSelect = (slot) => {
     setSelectedSlot(slot);
-    onSelectDate(`${slot.start} - ${slot.end}`);
+    const formattedDate = selectedDate.replace(/-/g, '/'); // Cambia el formato de la fecha (ej: 2025-03-15 -> 2025/03/15)
+    const formattedTime = `${formatTime(slot.start)}-${formatTime(slot.end)}`; // Formato del horario (ej: 10:00am-11:00am)
+    onSelectDate(`${formattedDate} - ${formattedTime}`); // Devuelve el formato deseado
   };
 
   // Función para personalizar el contenido de las celdas de los días
@@ -91,12 +101,12 @@ const MyCalendar = ({ onSelectDate, onClose }) => {
           <h3>Citas disponibles para {selectedDate}</h3>
           <ul>
             {availableSlots.map((slot) => (
-              <li key={slot.slotId} style={{ marginBottom: '10px' }}>
+              <li key={slot.id} style={{ marginBottom: '10px' }}> {/* Usa slot.id como clave */}
                 <button
                   style={{ padding: '5px 10px', backgroundColor: 'green', color: 'white' }}
                   onClick={() => handleSlotSelect(slot)}
                 >
-                  {slot.start} - {slot.end}
+                  {formatTime(slot.start)} - {formatTime(slot.end)}
                 </button>
               </li>
             ))}
@@ -104,7 +114,7 @@ const MyCalendar = ({ onSelectDate, onClose }) => {
         </div>
       )}
   
-      <button onClick={onClose} style={{ marginTop: '20px', padding: '10px', backgroundColor: 'red', color: 'white' }}>
+      <button onClick={onClose} style={{ marginTop: '20px', padding: '10px', backgroundColor: 'red', color: 'white', cursor: 'pointer' }}>
         Cerrar
       </button>
     </div>
