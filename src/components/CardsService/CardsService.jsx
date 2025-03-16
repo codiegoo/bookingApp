@@ -9,6 +9,9 @@ import ServiceForm from "../ServiceForm/ServiceForm";
 
 
 export default function CardsService() {
+
+  const service = "prueba"
+
   const [currentIndex, setCurrentIndex] = useState(0); // Índice de la tarjeta actual
   const cardsPerPage = 3; // Número de tarjetas visibles a la vez
   const [touchStartX, setTouchStartX] = useState(0); // Posición inicial del toque
@@ -113,14 +116,14 @@ export default function CardsService() {
               </div>
               <button onClick={handleClickForm}>Reservar</button>
               
-              {showForm && <ServiceForm service={service.name} setShowForm={setShowForm}/>}
+              
             </div>
             
           ))}
         </div>
       </div>
       {/* <IoIosArrowDropright className="slideBtn" onClick={slideRight}/> */}
-      
+      {showForm && <ServiceForm service={service} setShowForm={setShowForm}/>}
     </section>
   );
 }

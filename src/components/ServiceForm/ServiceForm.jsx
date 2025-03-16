@@ -56,40 +56,40 @@ export default function ServiceForm({ service, setShowForm }) {
   return (
     <div className="formBackground">
       <form className="formContain" onSubmit={handleSubmit}>
-        
-        <div className="inputContain">
-          <label htmlFor="nombre">Nombre:</label>
-          <div className="iconInput">
-            <LiaUserInjuredSolid className='formIconContain'/>
-            <input type="text" placeholder="Nombre completo" name="nombre" />
+        <div className='inputInner'>
+          <div className="inputContain">
+            <label htmlFor="nombre">Nombre:</label>
+            <div className="iconInput">
+              <LiaUserInjuredSolid className='formIconContain'/>
+              <input type="text" placeholder="Nombre completo" name="nombre" />
+            </div>
+          </div>
+          
+
+          <div className="inputContain">
+            <label htmlFor="phone">Teléfono:</label>
+            <div className="iconInput">
+              <IoCallOutline className='formIconContain'/>
+              <input type="text" placeholder="Tu WhatsApp" name="phone" />
+            </div>
+          </div>
+
+
+          <div className="inputContain">
+            <label htmlFor="date">Fecha</label>
+            <div className="iconInput">
+              <BsCalendar2Date className='formIconContain'/>
+              <input
+                type="text"
+                placeholder="Fecha"
+                name="date"
+                value={selectedDate}
+                onClick={handleDateClick}
+                readOnly
+              />
+            </div>
           </div>
         </div>
-        
-
-        <div className="inputContain">
-          <label htmlFor="phone">Teléfono:</label>
-          <div className="iconInput">
-            <IoCallOutline className='formIconContain'/>
-            <input type="text" placeholder="Tu WhatsApp" name="phone" />
-          </div>
-        </div>
-
-
-        <div className="inputContain">
-          <label htmlFor="date">Fecha</label>
-          <div className="iconInput">
-            <BsCalendar2Date className='formIconContain'/>
-            <input
-              type="text"
-              placeholder="Fecha"
-              name="date"
-              value={selectedDate}
-              onClick={handleDateClick}
-              readOnly
-            />
-          </div>
-        </div>
-        
 
         <button type="submit" className="btnApartarForm">Reservar</button>
         <button type="button" className="btnCloseForm" onClick={handleClose}>x</button>
